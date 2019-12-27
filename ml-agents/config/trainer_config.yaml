@@ -23,6 +23,13 @@ default:
             strength: 1.0
             gamma: 0.99
 
+PogoBouncer:
+    normalize: false
+    beta: 5.0e-3
+    batch_size: 1024
+    buffer_size: 10240
+    max_steps: 1.0e5
+
 FoodCollector:
     normalize: false
     beta: 5.0e-3
