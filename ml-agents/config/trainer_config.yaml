@@ -24,11 +24,21 @@ default:
             gamma: 0.99
 
 PogoBouncer:
-    normalize: false
-    beta: 5.0e-3
-    batch_size: 1024
-    buffer_size: 10240
+    hidden_units: 256
+    learning_rate: 0.005
+    learning_rate_schedule: constant
     max_steps: 1.0e5
+    normalize: false
+    num_layers: 2
+    time_horizon: 80
+    reward_signals:
+        extrinsic:
+            strength: 1.0
+            gamma: 0.99
+        curiosity:
+            strength: 0.25
+            gamma: 0.98
+            encoding_size: 256
 
 FoodCollector:
     normalize: false
