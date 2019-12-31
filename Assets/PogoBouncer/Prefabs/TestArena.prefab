@@ -163,16 +163,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4221312081931453447}
     m_Modifications:
+    - target: {fileID: 1086521277059188721, guid: 94cebc03da2b249309f1998fb4add910,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3496079110791864160, guid: 94cebc03da2b249309f1998fb4add910,
         type: 3}
       propertyPath: _groundHeight
       value: 
       objectReference: {fileID: 2934776059206493369}
-    - target: {fileID: 3496079110791864160, guid: 94cebc03da2b249309f1998fb4add910,
-        type: 3}
-      propertyPath: _survivalRewardFactor
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3496079110791864160, guid: 94cebc03da2b249309f1998fb4add910,
         type: 3}
       propertyPath: _resetAngleMax
@@ -181,7 +181,7 @@ PrefabInstance:
     - target: {fileID: 3496079110791864160, guid: 94cebc03da2b249309f1998fb4add910,
         type: 3}
       propertyPath: _resetHeightMax
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3496079110791864160, guid: 94cebc03da2b249309f1998fb4add910,
         type: 3}
@@ -196,12 +196,32 @@ PrefabInstance:
     - target: {fileID: 3496079110791864160, guid: 94cebc03da2b249309f1998fb4add910,
         type: 3}
       propertyPath: _heightRewardFactor
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3496079110791864160, guid: 94cebc03da2b249309f1998fb4add910,
         type: 3}
       propertyPath: _resetHeightMin
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3496079110791864160, guid: 94cebc03da2b249309f1998fb4add910,
+        type: 3}
+      propertyPath: _tiltPenaltyFactor
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3496079110791864160, guid: 94cebc03da2b249309f1998fb4add910,
+        type: 3}
+      propertyPath: agentParameters.maxStep
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3496079110791864160, guid: 94cebc03da2b249309f1998fb4add910,
+        type: 3}
+      propertyPath: _inputPenaltyFactor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3496079110791864160, guid: 94cebc03da2b249309f1998fb4add910,
+        type: 3}
+      propertyPath: _survivalRewardFactor
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5386621635365689332, guid: 94cebc03da2b249309f1998fb4add910,
         type: 3}
@@ -230,13 +250,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6493133027248726023, guid: 94cebc03da2b249309f1998fb4add910,
         type: 3}
-      propertyPath: m_AngularXMotion
-      value: 0
+      propertyPath: m_LowAngularXLimit.limit
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 6493133027248726023, guid: 94cebc03da2b249309f1998fb4add910,
         type: 3}
-      propertyPath: m_AngularYMotion
-      value: 0
+      propertyPath: m_HighAngularXLimit.limit
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6493133027248726023, guid: 94cebc03da2b249309f1998fb4add910,
+        type: 3}
+      propertyPath: m_AngularYLimit.limit
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8092139702075610900, guid: 94cebc03da2b249309f1998fb4add910,
         type: 3}

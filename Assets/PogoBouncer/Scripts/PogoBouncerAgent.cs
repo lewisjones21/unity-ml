@@ -22,7 +22,7 @@ public class PogoBouncerAgent : Agent
     private ConfigurableJoint _joint = null;
 
     [SerializeField]
-    private Vector3 _footResetOffset = Vector3.down;
+    private Vector3 _legResetOffset = Vector3.down;
 
     [SerializeField]
     private TextMesh _rewardText = null;
@@ -76,26 +76,19 @@ public class PogoBouncerAgent : Agent
     public override void CollectObservations()
     {
         // Observe body configuration
-        AddVectorObs(_body.position);
         AddVectorObs(GetHeightAboveGround());
         AddVectorObs(_body.rotation);
         // Observe relative leg position
-        AddVectorObs(_body.transform.InverseTransformPoint(_leg.position));
+        AddVectorObs(_body.transform.InverseTransformPoint(_leg.position) - _legResetOffset);
         // Observe contact information
         if (_contactStartTime >= 0f)
         {
-            AddVectorObs(Time.fixedTime - _contactStartTime);
-            AddVectorObs(_body.transform.InverseTransformPoint(_contactPosition));
-            AddVectorObs(_body.transform.InverseTransformDirection(_contactNormal));
+            AddVectorObs(Vector3.Dot(Physics.gravity.normalized, _contactNormal));
         }
         else
         {
             AddVectorObs(0f);
-            AddVectorObs(Vector3.zero);
-            AddVectorObs(Vector3.zero);
         }
-        // Observe target position
-        AddVectorObs(_body.transform.InverseTransformPoint(Target.position));
     }
 
     public override void AgentAction(float[] vectorAction)
@@ -138,10 +131,10 @@ public class PogoBouncerAgent : Agent
         _body.angularVelocity = Vector3.zero;
         _body.position = (_groundReference?.position ?? _body.transform.parent.position)
             + up * Random.Range(_resetHeightMin, _resetHeightMax)
-            - _body.rotation * _footResetOffset;
+            - _body.rotation * _legResetOffset;
         _body.velocity = Random.insideUnitSphere * _resetSpeedMax;
 
-        _leg.position = _body.position + _body.rotation * _footResetOffset;
+        _leg.position = _body.position + _body.rotation * _legResetOffset;
         _leg.velocity = _body.velocity;
         _leg.rotation = _body.rotation;
         _leg.angularVelocity = _body.angularVelocity;

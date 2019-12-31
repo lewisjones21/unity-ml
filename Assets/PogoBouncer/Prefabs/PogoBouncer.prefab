@@ -405,8 +405,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_ZDrive:
     serializedVersion: 3
-    positionSpring: 10000
-    positionDamper: 0
+    positionSpring: 25000
+    positionDamper: 10
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
@@ -921,8 +921,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    vectorObservationSize: 21
-    numStackedVectorObservations: 2
+    vectorObservationSize: 9
+    numStackedVectorObservations: 1
     vectorActionSize: 03000000
     vectorActionDescriptions: []
     vectorActionSpaceType: 1
@@ -952,7 +952,7 @@ MonoBehaviour:
   _target: {fileID: 0}
   _groundReference: {fileID: 0}
   _joint: {fileID: 6493133027248726023}
-  _footResetOffset: {x: 0, y: -1.05, z: 0}
+  _legResetOffset: {x: 0, y: -1.05, z: 0}
   _rewardText: {fileID: 9161794510107900773}
   _controlled: 0
   _survivalRewardFactor: 1
