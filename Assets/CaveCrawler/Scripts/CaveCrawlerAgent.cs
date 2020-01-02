@@ -45,6 +45,9 @@ public class CaveCrawlerAgent : Agent
     private float _targetReward = 2f;
 
     [SerializeField]
+    private float _targetFacingRewardFactor = 0.25f;
+
+    [SerializeField]
     private float _targetDistancePenaltyFactor = 0.5f;
 
     [SerializeField]
@@ -87,6 +90,10 @@ public class CaveCrawlerAgent : Agent
     {
         // Reward moving quickly
         AddReward(_rb.velocity.magnitude * Time.fixedDeltaTime * _speedRewardFactor);
+        // Reward facing the target
+        AddReward((1f + Vector3.Dot(transform.forward,
+                                    (Target.position - transform.position).normalized)) * 0.5f
+                  * Time.fixedDeltaTime * _targetFacingRewardFactor);
         // Penalize distance to target
         AddReward(Vector3.Distance(Target.position, transform.position) * Time.fixedDeltaTime
                   * -_targetDistancePenaltyFactor);

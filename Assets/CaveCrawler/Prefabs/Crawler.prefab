@@ -341,6 +341,7 @@ MonoBehaviour:
   _angularAccel: 3
   _speedRewardFactor: 0.1
   _targetReward: 2
+  _targetFacingRewardFactor: 0.25
   _targetDistancePenaltyFactor: 0.5
   _impactPenalty: 3
   _inputDeltaPenalty: 0.1
