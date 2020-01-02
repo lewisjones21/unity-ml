@@ -24,8 +24,13 @@ default:
             gamma: 0.99
 
 Crawler:
-    max_steps: 3.0e5
+    hidden_units: 256
+    learning_rate: 5.0e-3
+    learning_rate_schedule: constant
+    max_steps: 5.0e5
     normalize: false
+    num_layers: 3
+    time_horizon: 128
 
 FoodCollector:
     normalize: false
