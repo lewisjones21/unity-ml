@@ -24,8 +24,8 @@ default:
             gamma: 0.99
 
 Crawler:
+    max_steps: 3.0e5
     normalize: false
-    max_steps: 1.0e5
 
 FoodCollector:
     normalize: false
