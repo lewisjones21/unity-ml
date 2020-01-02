@@ -325,20 +325,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentParameters:
-    maxStep: 500
+    maxStep: 1000
     resetOnDone: 1
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 1
   _target: {fileID: 0}
   _rewardText: {fileID: 9161794510107900773}
   _controlled: 0
-  _spawnRegionSize: {x: 24, y: 5, z: 24}
+  _spawnRegionSize: {x: 24, y: 4, z: 24}
+  _targetResetDistance: 0
   _maxViewDistance: 10
   _raySplayAngle: 45
   _forwardAccel: 6
   _sideAccel: 3
   _angularAccel: 3
   _speedRewardFactor: 0.1
-  _targetReward: 1
+  _targetReward: 2
+  _targetDistancePenaltyFactor: 0.5
   _impactPenalty: 3
   _inputDeltaPenalty: 0.1
