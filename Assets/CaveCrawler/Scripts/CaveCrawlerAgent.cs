@@ -66,7 +66,7 @@ public class CaveCrawlerAgent : Agent
 
     private const int ACTION_LENGTH = 6;
 
-    private const int SIDE_RAY_COUNT = 6;
+    private const int SIDE_RAY_COUNT = 4;
 
     private const float COLLISION_PENALTY_DELAY = 1f;
 
