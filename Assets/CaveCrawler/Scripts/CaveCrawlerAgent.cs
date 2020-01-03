@@ -126,7 +126,7 @@ public class CaveCrawlerAgent : Agent
     {
         // Observe body configuration
         AddVectorObs(transform.position);
-        AddVectorObs(transform.rotation);
+        AddVectorObs(transform.rotation.eulerAngles);
         // Observe target position
         AddVectorObs(transform.InverseTransformPoint(Target.position));
         Debug.DrawLine(transform.position, Target.position, Color.green, Time.fixedDeltaTime);
